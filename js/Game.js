@@ -40,21 +40,19 @@
          //It also adds that phrase to the board by calling the addPhraseToDisplay() method on the active Phrase object. 
      }
 
-    
+    handleInteraction() {
+        // his method controls most of the game logic. It checks to see 
+        // if the button clicked by the player matches a letter in the phrase, 
+        // and then directs the game based on a correct or incorrect guess. This method should:
+        //1-Disable the selected letter’s onscreen keyboard button.
+        //2 If the phrase does not include the guessed letter, add the wrong CSS class 
+        //to the selected letter's keyboard button and call the removeLife() method.
 
-    //  handleInteraction() {
-    //     // his method controls most of the game logic. It checks to see 
-    //     // if the button clicked by the player matches a letter in the phrase, 
-    //     // and then directs the game based on a correct or incorrect guess. This method should:
-    //     //1-Disable the selected letter’s onscreen keyboard button.
-    //     //2 If the phrase does not include the guessed letter, add the wrong CSS class 
-    //     //to the selected letter's keyboard button and call the removeLife() method.
+        //3 If the phrase includes the guessed letter, add the chosen CSS class to the selected letter's keyboard button,
+        // call the showMatchedLetter() method on the phrase, 
+        //and then call the checkForWin() method. If the player has won the game, also call the gameOver() method.
 
-    //     //3 If the phrase includes the guessed letter, add the chosen CSS class to the selected letter's keyboard button,
-    //     // call the showMatchedLetter() method on the phrase, 
-    //     //and then call the checkForWin() method. If the player has won the game, also call the gameOver() method.
-
-    // }
+    }
 
     // removeLife() {
     //     // this method removes a life from the scoreboard,

@@ -1,4 +1,5 @@
 var game;
+var lorenzo;
 const resetBtn = document.querySelector('#btn__reset');
 resetBtn.addEventListener('click', function() {
     return game = new Game().startGame();

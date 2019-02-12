@@ -24,9 +24,22 @@
         document.querySelector('#phrase').innerHTML = frase;
     }
       
-    // checkLetter() {
-    //   //checks to see if the letter selected by the player matches a letter in the phrase.  
-    // }
+    checkLetter() {
+      //checks to see if the letter selected by the player matches a letter in the phrase.
+      let selectedLetter;  
+      let keys = document.querySelectorAll('.key');
+      for (let i = 0; i < keys.length; i ++) {
+          keys[i].addEventListener('click', function(element){
+             selectedLetter =  element.target.innerText;
+             return selectedLetter;
+          });
+      }
+      if (document.querySelectorAll(`.${selectedLetter}`)) {
+        return true;
+      } else {
+        return false;
+      }
+  }
 
     // showMatchedLetter() {
     //     //reveals the letter(s) on the board that matches the player's selection. 
@@ -37,3 +50,9 @@
 
 
   }
+
+
+
+
+
+ 
