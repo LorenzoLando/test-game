@@ -30,15 +30,15 @@
             return this.phrases[Math.floor(Math.random() * this.phrases.length)];
       } 
 
-
-
-
-
-
-    //  startGame() {
-    //     //hides the start screen overlay, calls the getRandomPhrase() method, and sets the activePhrase property with the chosen phrase.
-    //      //It also adds that phrase to the board by calling the addPhraseToDisplay() method on the active Phrase object. 
-    //  }
+   startGame() {
+        //hides the start screen overlay,
+        document.querySelector('#overlay').style.visibility = 'hidden';
+        //calls the getRandomPhrase() method, and sets the activePhrase property with the chosen phrase.
+        this.activePhrase = this.getRandomPhrase();
+         return this.activePhrase.addPhraseToDisplay();
+       
+         //It also adds that phrase to the board by calling the addPhraseToDisplay() method on the active Phrase object. 
+     }
 
     
 
