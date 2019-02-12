@@ -8,16 +8,22 @@
         this.phrase = phrase.toLowerCase();
     }
 
-    // addPhraseToDisplay() {
-    //     //aggiunge placeholder di lettere quando il giorco inizia
-    //     //Each letter is presented by an empty box, one li element for each letter. 
-    //     //See the example_phrase_html.txt 
-    //     //file for an example of what the rendered HTML for a phrase should look like when the game starts, 
-    //     //including any id or class attributes needed.
-    //     // When the player correctly guesses a letter, the empty box is replaced with the matched letter (see the showMatchedLetter() method below). 
-    //     //Make sure the phrase displayed on the screen uses the letter CSS class for letters and the space CSS class for spaces.
-    // }
-
+    addPhraseToDisplay() {
+      let frase = `
+        <ul>`;
+        this.phrase.split("").forEach(function(element) {
+        if(element == " ") {
+          frase += `<li class="space">${element}</li>`;
+        } else {
+          frase += `<li class="hide letter ${element}">${element}</li>`;
+        } 
+        });
+         frase += `
+         </ul>
+        </div>`;
+        document.querySelector('#phrase').innerHTML = frase;
+    }
+      
     // checkLetter() {
     //   //checks to see if the letter selected by the player matches a letter in the phrase.  
     // }

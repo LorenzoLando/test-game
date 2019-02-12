@@ -25,6 +25,12 @@
     }
 
 
+       getRandomPhrase(){
+//torna una frase casuale dalla proprieta 
+            return this.phrases[Math.floor(Math.random() * this.phrases.length)];
+      } 
+
+
 
 
 
@@ -34,11 +40,7 @@
     //      //It also adds that phrase to the board by calling the addPhraseToDisplay() method on the active Phrase object. 
     //  }
 
-    //  getRandomPhrase(){
-
-    //     //this method randomly retrieves one of the phrases stored in the phrases array and returns it.
-
-    //  } 
+    
 
     //  handleInteraction() {
     //     // his method controls most of the game logic. It checks to see 
