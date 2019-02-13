@@ -28,29 +28,34 @@
       //checks to see if the letter selected by the player matches a letter in the phrase.
       let selectedLetter;  
       let keys = document.querySelectorAll('.key');
+      let matchedLetters;
       for (let i = 0; i < keys.length; i ++) {
           keys[i].addEventListener('click', function(element){
              selectedLetter =  element.target.innerText;
-             return selectedLetter;
-          });
+             if(document.querySelector(`.${selectedLetter}`)) {
+              matchedLetters =  document.querySelectorAll(`.${selectedLetter}`);
+                return matchedLetters;
+             } else {
+                return false;
+            }
+         });
+        }
       }
-      if (document.querySelectorAll(`.${selectedLetter}`)) {
-        return true;
-      } else {
-        return false;
-      }
+
+    showMatchedLetter() {
+        let matches = this.checkLetter();
+        matches.forEach(function(element){
+          element.classList.remove('hide');
+          element.classList.remove('show');
+        });
+        return matches;
+     }
+
+
   }
 
-    // showMatchedLetter() {
-    //     //reveals the letter(s) on the board that matches the player's selection. 
-    //     //To reveal the matching letter(s), select all of the letter DOM elements that 
-    //     //have a CSS class name that matches the selected letter and replace each selected 
-    //     //element's hide CSS class with the show CSS class. 
-    // }
 
-
-  }
-
+  
 
 
 

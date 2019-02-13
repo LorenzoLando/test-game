@@ -40,6 +40,15 @@
          //It also adds that phrase to the board by calling the addPhraseToDisplay() method on the active Phrase object. 
      }
 
+      checkForWin() {
+         //this method checks to see if the player has revealed all of the letters in the active phrase.
+         if(document.querySelector('.hide')) {
+            return false;
+         } else {
+            return true;
+         }
+     }
+
     handleInteraction() {
         // his method controls most of the game logic. It checks to see 
         // if the button clicked by the player matches a letter in the phrase, 
@@ -62,9 +71,7 @@
 
     // }
 
-    // checkForWin() {
-    //     //this method checks to see if the player has revealed all of the letters in the active phrase.
-    // }
+    
 
     // gameOver() {
     //     // this method displays the original start screen overlay, and depending on the outcome of the game, 
