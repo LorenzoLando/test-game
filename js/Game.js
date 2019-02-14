@@ -45,9 +45,35 @@
          if(document.querySelector('.hide')) {
             return false;
          } else {
+            
+           
             return true;
          }
      }
+
+     removeLife() {
+       //se checkletter return false
+       if(this.checkLetter() === false) {
+         //rimuovi un elemento immagine liveheart
+         //aggiungi un elemento immagine lostheart
+         document.querySelector('img[src="images/liveHeart.png"]').src = "images/lostHeart.png";
+          //incrementa la missed property
+         this.missed += 1;
+        }
+        //se missed ha 5 tentativi
+        if(this.missed > 4) {
+         //chiama il metodo gameOver();
+         this.gameOver();
+        }
+       }
+
+       gameOver() {
+        // this method displays the original start screen overlay, and depending on the outcome of the game, 
+        document.querySelector('#overlay').style.visibility = 'initial';
+        // updates the overlay h1 element with a friendly win or loss message, 
+        // and replaces the overlay’s start CSS class with either the win or lose CSS class. 
+    }
+
 
     handleInteraction() {
         // his method controls most of the game logic. It checks to see 
@@ -63,25 +89,4 @@
 
     }
 
-    // removeLife() {
-    //     // this method removes a life from the scoreboard,
-    //     // by replacing one of the liveHeart.png images with a lostHeart.png image 
-    //     // (found in the images folder) and increments the missed property. 
-    //     // If the player has five missed guesses (i.e they're out of lives), then end the game by calling the gameOver() method.
-
-    // }
-
-    
-
-    // gameOver() {
-    //     // this method displays the original start screen overlay, and depending on the outcome of the game, 
-    //     // updates the overlay h1 element with a friendly win or loss message, 
-    //     // and replaces the overlay’s start CSS class with either the win or lose CSS class. 
-    // }
-
-
-
-
-
-
- }
+   }
