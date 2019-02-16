@@ -1,61 +1,39 @@
 const game = new Game ();
 const keys = document.querySelectorAll('.key');
+const hearts = document.querySelectorAll('.tries img');
 // Click on button starts the game
 document.querySelector('#btn__reset')
  .addEventListener('click', () => {
- 	game.startGame();
+   //remove all <li> elemets from the page
+   document.querySelector('#phrase ul').innerHTML = '';
+   game.missed  = 0;
+   for (let i = 0; i < keys.length; i ++) {
+        //remove chosens class
+        keys[i].classList.remove('chosen');
+        //remove wrong
+        keys[i].classList.remove('wrong');
+        //remove disabled from key button
+        keys[i].disabled = false;
+    }
+
+    for (let i = 0; i < hearts.length; i ++) {
+        //reset all heart img
+        hearts[i].src = "images/liveHeart.png";
+    }    
+    game.startGame();
  })
  
- const clickController =  () => {
+ const clickController =  ()  => {
     for (let i = 0; i < keys.length; i ++) {
         keys[i].addEventListener('click', (element) => {
            
             game.handleInteraction(element.target);
           
        });
-      }
     }
+}
  
 clickController();
 
 
 
-
- //vecchi metodi
-
-
-    
- 
-    
-
-
-
-
-
-
-//Create a new instance of the Game class and add event listeners for the start button and onscreen keyboard buttons:
-
-
-
-//Add a click event listener to the "Start Game" button which creates a new Game object and starts the game by calling the startGame() method.
-
-
-// Add click event listeners to each of the onscreen keyboard buttons, so that clicking a button calls the handleInteraction() method on the Game object. 
-// Event delegation can also be used in order to avoid having to add an event listener to each individual keyboard button. 
-// Clicking the space between and around the onscreen keyboard buttons should not result in the handleInteraction() method being called.
-
-
-
-
-//After a game is completed, the gameboard needs to be reset so that clicking the "Start Game" button will successfully load a new game.
-
-
-//Remove all li elements from the Phrase ul element.
-
-
-
-//Enable all of the onscreen keyboard buttons and update each to use the key CSS class, and not use the chosen or wrong CSS classes.
-
-
-
-//Reset all of the heart images (i.e. the player's lives) in the scoreboard at the bottom of the gameboard to display the liveHeart.png image.
