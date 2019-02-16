@@ -48,25 +48,6 @@
 
 
 
-//vecchi metodi
-
-  // checkLetter() {
-  //   //checks to see if the letter selected by the player matches a letter in the phrase.
-  //   let selectedLetter;  
-  //   let keys = document.querySelectorAll('.key');
-  //   let matchedLetters;
-  //   for (let i = 0; i < keys.length; i ++) {
-  //       keys[i].addEventListener('click', function(element){
-  //          selectedLetter =  element.target.innerText;
-  //          if(document.querySelector(`.${selectedLetter}`)) {
-  //           matchedLetters =  document.querySelectorAll(`.${selectedLetter}`);
-  //             return matchedLetters;
-  //          } else {
-  //             return false;
-  //         }
-  //      });
-  //     }
-  //   }
 
  
 

@@ -52,14 +52,11 @@
      }
 
      removeLife() {
-       //se checkletter return false
-       if(this.checkLetter() === false) {
-         //rimuovi un elemento immagine liveheart
-         //aggiungi un elemento immagine lostheart
+      
          document.querySelector('img[src="images/liveHeart.png"]').src = "images/lostHeart.png";
           //incrementa la missed property
          this.missed += 1;
-        }
+        
         //se missed ha 5 tentativi
         if(this.missed > 4) {
          //chiama il metodo gameOver();
@@ -75,18 +72,22 @@
     }
 
 
-    handleInteraction() {
-        // his method controls most of the game logic. It checks to see 
-        // if the button clicked by the player matches a letter in the phrase, 
-        // and then directs the game based on a correct or incorrect guess. This method should:
-        //1-Disable the selected letter’s onscreen keyboard button.
-        //2 If the phrase does not include the guessed letter, add the wrong CSS class 
-        //to the selected letter's keyboard button and call the removeLife() method.
-
-        //3 If the phrase includes the guessed letter, add the chosen CSS class to the selected letter's keyboard button,
-        // call the showMatchedLetter() method on the phrase, 
-        //and then call the checkForWin() method. If the player has won the game, also call the gameOver() method.
-
+    handleInteraction(button) {
+      //disabilita il bottone cliccato
+      button.disabled  = true;
+      //se la scelta era sbagliata
+      if(this.activePhrase.checkLetter(button.innerText) === false ) {
+         //aggiungi la classe css wrong all elemento selezionato
+         button.classList.add("wrong");
+         this.removeLife();
+      } else {
+         //aggiungi la classe chose all elemento selezionato
+         button.classList.add("chosen");
+         this.activePhrase.showMatchedLetter(button.innerText);
+      }
+      if(this.checkForWin())  {
+            this.gameOver();
+      }
     }
 
    }

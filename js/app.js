@@ -1,10 +1,32 @@
-var game;
-var lorenzo;
-const resetBtn = document.querySelector('#btn__reset');
-resetBtn.addEventListener('click', function() {
-    return game = new Game().startGame();
-});
+const game = new Game ();
+const keys = document.querySelectorAll('.key');
+// Click on button starts the game
+document.querySelector('#btn__reset')
+ .addEventListener('click', () => {
+ 	game.startGame();
+ })
+ 
+ const clickController =  () => {
+    for (let i = 0; i < keys.length; i ++) {
+        keys[i].addEventListener('click', (element) => {
+           
+            game.handleInteraction(element.target);
+          
+       });
+      }
+    }
+ 
+clickController();
 
+
+
+
+ //vecchi metodi
+
+
+    
+ 
+    
 
 
 
